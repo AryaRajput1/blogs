@@ -1,6 +1,6 @@
-function Logo({width='100px'}) {
+function Logo({className=''}) {
   return (
-    <div>Logo</div>
+    <h2 className={className}>Blogsite</h2>
   )
 }
 
