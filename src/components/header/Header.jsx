@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import ToggleButton from '../ToggleButton'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { SignOutButton } from '@clerk/clerk-react'
 
 function Header() {
   const authStatus = useSelector((state) => state.auth?.status)
@@ -66,7 +67,7 @@ function Header() {
         </div>
         <div className='flex items-center gap-6'>
           <ToggleButton/>
-          {authStatus && <LogoutBtn/>}
+          {authStatus && <SignOutButton  className='bg-[#5191fe] text-white px-5 py-2 rounded-full hover:bg-[#87acec]' />}
           {!isMenuOpen?(<Menu onClick={onToggleMenu} className='text-3xl cursor-pointer md:hidden' />):
           (<X onClick={onToggleMenu} className='text-3xl cursor-pointer md:hidden'/>)}
         </div>
